@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thông tin xe</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .header {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .image {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+
+    .form-group {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .form-group label {
+      margin-right: 10px;
+    }
+
+    .submit-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <h1 class="header">Thông tin xe</h1>
+    <form action="/predict" method="post">
+      <div class="form-group">
+        <label for="year">Năm sản xuất :</label>
+        <input type="number" step="any" name="year" required><br>
+      </div>
+      <div class="form-group">
+        <label for="transmission">Loại hộp số:</label>
+        <select name="transmission" required>
+          <option value="" disabled selected>Chọn loại hộp số</option>
+          <option value="Automatic">Automatic</option>
+          <option value="Manual">Manual</option>
+          <option value="Semi-Auto">Semi-Automatic</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      
+      <!-- Thêm dòng xuống đây -->
+      <br>
+      <div class="form-group">
+        <label for="mileage">Tổng số km đã đi được:</label>
+        <input type="number" step="any" name="mileage" required>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="fuelType">Loại nhiên liệu:</label>
+        <select name="fuelType" required>
+          <option value="" disabled selected>Chọn loại nhiên liệu</option>
+          <option value="Diesel">Diesel</option>
+          <option value="Hybrid">Hybrid</option>
+          <option value="Petrol">Petrol</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <br>
+
+      <div class="form-group">
+        <label for="automaker">Hãng xe:</label>
+        <select name="automaker" required>
+          <option value="" disabled selected>Chọn loại hãng xe</option>      
+          <option value="toyota">Toyota</option>
+        </select>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="tax">Thuế:</label>
+        <input type="number" step="any" name="tax" required>
+      </div>
+      <div class="form-group">
+        <label for="mpg">MPG:</label>
+        <input type="number" step="any" name="mpg" required>
+      </div>
+      <div class="form-group">
+        <label for="engineSize">Kích thước động cơ:</label>
+        <input type="number" step="any" name="engineSize" required>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="isols">Chọn mô hình:</label>
+        <select name="isols" required>
+          <option value="" disabled selected>Chọn mô hình</option>
+          <option value="machine learning">Hồi quy tuyến tính</option>
+        </select>
+      </div>
+      <br>
+      <!-- Căn giữa nút submit -->
+      <div class="submit-button">
+        <input type="submit" value="Dự báo">
+      </div>
+    </form>
+  </div>
+</body>
+</html>
